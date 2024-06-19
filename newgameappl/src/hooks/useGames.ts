@@ -2,11 +2,19 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/apiClient";
 import { CanceledError } from "axios";
 
+export interface Platform{
+  id:number;
+  name: string;
+  slug: string;
+}
+
+
 // Help us shaping our data in the form of our interfaces (type) props to pass data from parent components to child
 export interface Game {
   id: number;
   name: string;
   background_image: string;
+  parent_platforms:{platform: Platform} [];
 }
 
 export interface FetchGameResponse {

@@ -16,9 +16,9 @@ const GameGrid = () => {
   return (
     <>
     {/* Display our data (ul, li, grid, table - usually map it with unique key ) */}
-    <SimpleGrid>
+    <SimpleGrid columns={{sm:1, md:2, lg:3, xl:5}} spacing={10} padding={'20px'}>
     {games.map((game) =>  (
-        <GameCard key={game.id} game={game}>{game.name}</GameCard>
+        <GameCard  game={game} key={game.id} ></GameCard>
     ))}
     </SimpleGrid>
     {error && <Text color={'red'}>{error}</Text>}
